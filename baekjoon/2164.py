@@ -1,6 +1,6 @@
 """
 https://acmicpc.net/problem/2164
-- queue를 사용
+- queue 사용
 """
 
 from collections import deque

@@ -1,6 +1,6 @@
 """
 https://www.acmicpc.net/problem/9012
- - stack을 사용하여 괄호의 쌍이 존재하는지 확인
+ - stack 사용, 괄호의 쌍이 존재 여부 확인
 """
 
 for _ in range(int(input())):
