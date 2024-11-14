@@ -7,7 +7,7 @@ input = sys.stdin.readline
 
 result = []
 
-s = ["(",")","[","]"]
+s = ["(", ")", "[", "]"]
 
 while True:
     command = str(input()).rstrip()

@@ -27,6 +27,7 @@ def dfs(node, result):
 
     return result
 
+
 def bfs(start_node):
     result = [start_node]
     dq = deque()

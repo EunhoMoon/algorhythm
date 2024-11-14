@@ -6,7 +6,7 @@ from collections import deque
 
 input = sys.stdin.readline
 
-count_of_computers = int(input()) + 1 
+count_of_computers = int(input()) + 1
 adj = [[0] * (count_of_computers) for _ in range(count_of_computers)]
 check = [[False] * (count_of_computers) for _ in range(count_of_computers)]
 contain_root = set([1])

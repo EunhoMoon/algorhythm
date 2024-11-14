@@ -18,4 +18,6 @@ for idx in range(1, N + 1):
 
 for _ in range(M):
     command = input().rstrip()
-    print(pokemon_list[int(command) - 1] if command.isdigit() else pokemon_dict[command])
+    print(
+        pokemon_list[int(command) - 1] if command.isdigit() else pokemon_dict[command]
+    )

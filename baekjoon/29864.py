@@ -18,7 +18,7 @@ while len(winners) > 1:
         round_winner = players[i] if players[i] in winners else players[i + 1]
         next_players.append(round_winner)
         winners.remove(round_winner)
-        
+
     players = next_players
     results.append(players)
 

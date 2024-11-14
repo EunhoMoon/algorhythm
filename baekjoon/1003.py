@@ -1,7 +1,7 @@
 """
 https://www.acmicpc.net/problem/1003
 """
-import sys 
+import sys
 
 input = sys.stdin.readline
 
@@ -10,6 +10,7 @@ T = int(input())
 check = [[0, 0] for _ in range(41)]
 check[0] = [1, 0]
 check[1] = [0, 1]
+
 
 def fibonacci(num):
     if num == 0 or num == 1:
@@ -25,10 +26,9 @@ def fibonacci(num):
         else:
             return check[num]
 
+
 for _ in range(T):
     N = int(input())
 
     count = fibonacci(N)
     print(f"{count[0]} {count[1]}")
-
-

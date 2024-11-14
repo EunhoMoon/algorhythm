@@ -8,13 +8,13 @@ input = sys.stdin.readline
 for _ in range(int(input())):
     p = input().strip()
     n = int(input())
-    arr = input().strip()[1:-1].split(',')
+    arr = input().strip()[1:-1].split(",")
 
     if n == 0:
         arr = []
 
-    if p.count('D') > n:
-        print('error')
+    if p.count("D") > n:
+        print("error")
         continue
 
     reverse = False
@@ -22,9 +22,9 @@ for _ in range(int(input())):
     right = n
 
     for command in p:
-        if command == 'R':
+        if command == "R":
             reverse = not reverse
-        elif command == 'D':
+        elif command == "D":
             if reverse:
                 right -= 1
             else:
@@ -34,6 +34,6 @@ for _ in range(int(input())):
         arr = arr[left:right]
         if reverse:
             arr = arr[::-1]
-        print('[' + ','.join(arr) + ']')
+        print("[" + ",".join(arr) + "]")
     else:
-        print('error')
+        print("error")
