@@ -3,25 +3,27 @@ https://www.acmicpc.net/problem/2841
 """
 
 import sys
+from collections import deque
 
 input = sys.stdin.readline
 
 N, P = map(int, input().split())
-count = 0
 
 guitar = [[] for _ in range(7)]
+count = 0
 
 for _ in range(N):
-    line, flet = map(int, input().split())
+    string, fret = map(int, input().split())
+    present_string = guitar[string]
 
-    while guitar[line] and guitar[line][-1] > flet:
-        guitar[line].pop()
+    while present_string and present_string[-1] > fret:
+        present_string.pop()
         count += 1
 
-    if guitar[line] and guitar[line][-1] == flet:
+    if present_string and present_string[-1] == fret:
         continue
 
-    guitar[line].append(flet)
+    present_string.append(fret)
     count += 1
 
 print(count)

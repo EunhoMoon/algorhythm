@@ -9,11 +9,7 @@ case = 1
 
 while True:
     L, P, V = map(int, input().split())
-    result = 0
-
     if L == P == V == 0:
         break
-
-    result = V // P * L + (V % P if V % P < L else L)
-    print(f"Case {case}: {result}")
+    print(f"Case {case}: {V // P * L +  min(L, V % P)}")
     case += 1
