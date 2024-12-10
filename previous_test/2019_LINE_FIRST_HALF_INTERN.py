@@ -4,31 +4,37 @@ https://engineering.linecorp.com/ko/blog/2019-firsthalf-line-internship-recruit-
 
 from collections import deque
 
-K, N = map(int, input().split())
+cony, brown = map(int, input().split())
 
 dq = deque()
-dq.append(N)
+dq.append(brown)
 
-max_num = 200000
-visited = [0] * (max_num + 1)
-visited_c = [0] * (max_num + 1)
-visited_c[N] = K
+max_position = 200000
+brown_visited = [0] * (max_position + 1)
+cony_visited = [0] * (max_position + 1)
+cony_visited[brown] = cony
 
-is_catch = False
+is_failed = True
 
 while dq:
-    x = dq.popleft()
+    brown_position = dq.popleft()
+    cony_position = cony_visited[brown_position]
 
-    if x == visited_c[x]:
-        print(visited[x])
-        is_catch = True
+    if cony_position > max_position:
         break
 
-    for i in (x + 1, x - 1, x * 2):
-        if 0 <= i <= max_num and not visited[i]:
-            visited[i] = visited[x] + 1
-            visited_c[i] = visited_c[x] + visited[x] + 1
+    if brown_position == cony_position:
+        print(brown_visited[brown_position])
+        is_failed = False
+        break
+
+    for i in (brown_position + 1, brown_position - 1, brown_position * 2):
+        if 0 <= i <= max_position and not brown_visited[i]:
+            brown_visited[i] = brown_visited[brown_position] + 1
+            cony_visited[i] = (
+                cony_visited[brown_position] + brown_visited[brown_position] + 1
+            )
             dq.append(i)
 
-if not is_catch:
+if is_failed:
     print(-1)
