@@ -31,9 +31,7 @@ while dq:
     for i in (brown_position + 1, brown_position - 1, brown_position * 2):
         if 0 <= i <= max_position and not brown_visited[i]:
             brown_visited[i] = brown_visited[brown_position] + 1
-            cony_visited[i] = (
-                cony_visited[brown_position] + brown_visited[brown_position] + 1
-            )
+            cony_visited[i] = cony_visited[brown_position] + brown_visited[i]
             dq.append(i)
 
 if is_failed:
