@@ -11,16 +11,15 @@ mid = ""
 odd_count = 0
 
 for char, count in alphabet_count.items():
-    if count % 2 == 1:
+    if count % 2:
         odd_count += 1
         mid = char
 
 if odd_count > 1:
     print("I'm Sorry Hansoo")
 else:
-    start = ""
+    half = ""
     for char in sorted(alphabet_count.keys()):
-        start += char * (alphabet_count[char] // 2)
+        half += char * (alphabet_count[char] // 2)
 
-    end = start[::-1]
-    print(start + mid + end)
+    print(half + mid + half[::-1])
