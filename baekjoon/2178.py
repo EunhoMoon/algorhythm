@@ -16,6 +16,7 @@ for _ in range(N):
     nodes = list(map(int, read_line().rstrip()))
     maze.append(nodes)
 
+
 def is_valid_coord(y, x):
     return (0 <= x < M and 0 <= y < N) and maze[y][x] == 1
 
@@ -28,7 +29,7 @@ def bfs():
     q.append((0, 0, 1))
 
     while len(q) > 0:
-        y, x, d = q.popleft() # d = 움직인 횟수
+        y, x, d = q.popleft()  # d = 움직인 횟수
 
         if y == N - 1 and x == M - 1:
             return d
